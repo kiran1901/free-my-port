@@ -43,18 +43,18 @@ const spinner = ora(`Checking port ${port}`).start();
 detect(port)
     .then(_port => {
         if (_port === port) {
-        spinner.succeed(`Port ${port} is already free.`);
-        console.log(chalk.green(`You can run your server on port ${port}, it is free now.`));
-        } else {
-        spinner.text = `Freeing port ${port}`;
-        return kill(port)
-            .then(() => {
-            spinner.succeed(`Port ${port} is freed.`);
+            spinner.succeed(`Port ${port} is already free.`);
             console.log(chalk.green(`You can run your server on port ${port}, it is free now.`));
-            })
-            .catch((err) => {
-            spinner.fail(`Failed to free port ${port}: ${err.message}`);
-            });
+        } else {
+            spinner.text = `Freeing port ${port}`;
+            return kill(port)
+                .then(() => {
+                    spinner.succeed(`Port ${port} is freed.`);
+                    console.log(chalk.green(`You can run your server on port ${port}, it is free now.`));
+                })
+                .catch((err) => {
+                    spinner.fail(`Failed to free port ${port}: ${err.message}`);
+                });
         }
     })
     .catch((err) => {
