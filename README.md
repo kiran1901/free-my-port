@@ -57,7 +57,7 @@ free-my-port -i
 #### Specify Number of Retries:
 
 ```sh
-free-my-port -p 3000 -r 3
+free-my-port -p 3000 -r 3 
 ```
 
 ## Configuration
