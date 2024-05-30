@@ -6,6 +6,16 @@ free-my-port is a command-line utility designed to release a specified port on y
 
 To install the package globally, execute the following command:
 
+## Features
+
+- 🚀 **Free a Single Port**: Free an individual port.
+- 🌐 **Free Multiple Ports**: Free multiple ports specified by a comma-separated list.
+- 📊 **Free Port Ranges**: Free a range of ports.
+- 🕹️ **Interactive Mode**: Select ports to free interactively.
+- 🔍 **Port Usage Insights**: Get details about which processes are using specific ports.
+- 🔄 **Retry Mechanism**: Retry freeing ports a specified number of times.
+- 🌟 **Wildcard Port Freeing**: Support freeing multiple ports using wildcard patterns (e.g., `free-my-port -p 3000-3010`).
+
 ```sh
 npm install -g free-my-port
 ```
@@ -24,7 +34,30 @@ npm install -g free-my-port
 To free a port directly, use the `-p` option followed by the port number:
 
 ```sh
-free-my-port -p 3000
+free-my-port -p 6969
+```
+#### Free Multiple Ports:
+
+```sh
+free-my-port -p 6969,6970,6971
+```
+
+#### Free a Range of Ports:
+
+```sh
+free-my-port -p 6969-7979
+```
+
+#### Interactive Mode:
+
+```sh
+free-my-port -i
+```
+
+#### Specify Number of Retries:
+
+```sh
+free-my-port -p 3000 -r 3
 ```
 
 ## Configuration
