@@ -1,6 +1,6 @@
 {
     "name": "free-my-port",
-    "version": "1.0.6",
+    "version": "1.0.8",
     "description": "Free my port",
     "main": "index.js",
     "type": "module",
